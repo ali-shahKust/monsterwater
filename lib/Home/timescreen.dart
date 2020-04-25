@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app/Home/Homepage.dart';
+import 'package:flutter_app/Home/achievement.dart';
 
 import '../res.dart';
 import 'HomeBar.dart';
@@ -80,19 +82,31 @@ class _TimescreenState extends State<Timescreen> {
                     SizedBox(width: 20,),
                     Padding(
                       padding: const EdgeInsets.only(left:45.0,top: 50),
-                      child: Text('Home', style: TextStyle(
-                          fontSize: 14,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.white
-                      ),),
+                      child: GestureDetector(
+                        onTap: (){
+                          Navigator.push(context, MaterialPageRoute(builder: (context)=>HomePage()));
+
+                        },
+                        child: Text('Home', style: TextStyle(
+                            fontSize: 14,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white
+                        ),),
+                      ),
                     ),  SizedBox(width: 20,),
                     Padding(
                       padding: const EdgeInsets.only(left:35.0,top: 50),
-                      child: Text('Achievement', style: TextStyle(
-                          fontSize: 14,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.white
-                      ),),
+                      child: GestureDetector(
+                        onTap: (){
+                          Navigator.push(context, MaterialPageRoute(builder: (context)=>Achievement()));
+
+                        },
+                        child: Text('Achievement', style: TextStyle(
+                            fontSize: 14,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white
+                        ),),
+                      ),
                     )
                   ],
                 )
