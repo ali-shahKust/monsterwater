@@ -23,6 +23,8 @@ dependencies:
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^0.1.2
+  google_nav_bar: ^2.0.1
+  google_maps_flutter: ^0.4.0
 
 dev_dependencies:
   flutter_test:
@@ -40,11 +42,75 @@ flutter:
   # the material Icons class.
   uses-material-design: true
 
-  # To add assets to your application, add an assets section, like this:
-  # assets:
-  #  - images/a_dot_burr.jpeg
-  #  - images/a_dot_ham.jpeg
-
+  assets:
+    - images/a.png
+    - images/a1.png
+    - images/a10.png
+    - images/a11.png
+    - images/a12.png
+    - images/a13.png
+    - images/a14.png
+    - images/a15.png
+    - images/a16.png
+    - images/a17.png
+    - images/a19.png
+    - images/a2.png
+    - images/a20.png
+    - images/a21.png
+    - images/a22.png
+    - images/a23.png
+    - images/a24.png
+    - images/a25.png
+    - images/a26.png
+    - images/a27.png
+    - images/a28.png
+    - images/a29.png
+    - images/a3.png
+    - images/a30.png
+    - images/a31.png
+    - images/a32.png
+    - images/a33.png
+    - images/a34.png
+    - images/a35.png
+    - images/a36.png
+    - images/a37.png
+    - images/a38.png
+    - images/a39.png
+    - images/a4.png
+    - images/a40.png
+    - images/a41.png
+    - images/a42.png
+    - images/a43.png
+    - images/a44.png
+    - images/a45.png
+    - images/a46.png
+    - images/a47.png
+    - images/a48.png
+    - images/a49.png
+    - images/a5.png
+    - images/a50.png
+    - images/a51.png
+    - images/a52.png
+    - images/a53.png
+    - images/a54.png
+    - images/a55.png
+    - images/a56.png
+    - images/a57.png
+    - images/a58.png
+    - images/a6.png
+    - images/a7.png
+    - images/a8.png
+    - images/a9.png
+    - images/acheivement.png
+    - images/backgroundimg.png
+    - images/bgimg.png
+    - images/challenges.png
+    - images/challengesscreen.png
+    - images/homebar.png
+    - images/homebg.png
+    - images/start.png
+    - images/timescreen.png
+    - images/watersave.png
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
 
