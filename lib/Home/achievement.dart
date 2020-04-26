@@ -53,13 +53,41 @@ class _AchievementState extends State<Achievement> {
                                 padding: const EdgeInsets.all(18.0),
                                 child: Image.asset(Res.a33,width:250,height: 80,),
                               ),
+                              Padding(
+                                padding: const EdgeInsets.only(left:18.0,top: 25),
+                                child: Image.asset(Res.a7,width: 65,height: 65,),
+                              ),
+
                               Center(child: Padding(
-                                padding: const EdgeInsets.only(left:0,top: 48,right: 100),
-                                child: Text("some text",style: TextStyle(
-                                    fontSize: 16,
+                                padding: const EdgeInsets.only(left:60,top: 48,right: 70),
+                                child: Text("Take a shower of maximum 4 minutes",style: TextStyle(
+                                    fontSize: 10,
                                     color: Colors.white,
-                                    fontWeight: FontWeight.bold
                                 ),),
+                              )),
+                            ]
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(left:28.0),
+                        child: Stack(
+                            children: <Widget>[
+
+                              Padding(
+                                padding: const EdgeInsets.all(18.0),
+                                child: Image.asset(Res.a33,width:250,height: 80,),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.only(left:18.0,top: 25),
+                                child: Image.asset(Res.cli,width: 75,height: 75,),
+                              ),
+
+                              Center(child: Padding(
+                                padding: const EdgeInsets.only(left:80,top: 48,right: 100),
+                                child: Text("Planting trees",style: TextStyle(
+                                    fontSize: 12,
+                                    color: Colors.white,
+                               ),),
                               )),
                             ]
                         ),
@@ -72,31 +100,15 @@ class _AchievementState extends State<Achievement> {
                                 padding: const EdgeInsets.all(18.0),
                                 child: Image.asset(Res.a33,width:250,height: 80,),
                               ),
-                              Center(child: Padding(
-                                padding: const EdgeInsets.only(left:0,top: 48,right: 100),
-                                child: Text("some text",style: TextStyle(
-                                    fontSize: 16,
-                                    color: Colors.white,
-                                    fontWeight: FontWeight.bold
-                                ),),
-                              )),
-                            ]
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.only(left:28.0),
-                        child: Stack(
-                            children: <Widget>[
                               Padding(
-                                padding: const EdgeInsets.all(18.0),
-                                child: Image.asset(Res.a33,width:250,height: 80,),
+                                padding: const EdgeInsets.only(left:18.0,top: 20),
+                                child: Image.asset(Res.cities,width: 75,height: 75,),
                               ),
                               Center(child: Padding(
-                                padding: const EdgeInsets.only(left:0,top: 48,right: 100),
-                                child: Text("some text",style: TextStyle(
-                                    fontSize: 16,
+                                padding: const EdgeInsets.only(left:76,top: 48,right: 60),
+                                child: Text("Collect plastic bottles together",style: TextStyle(
+                                    fontSize: 12,
                                     color: Colors.white,
-                                    fontWeight: FontWeight.bold
                                 ),),
                               )),
                             ]

@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_app/Home/Homepage.dart';
 import 'package:flutter_app/Home/achievement.dart';
+import 'package:flutter_app/Home/challengescreen.dart';
 import 'package:flutter_app/Home/startwaterchl.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import '../res.dart';
@@ -12,6 +13,8 @@ class ChallengeBar extends StatefulWidget {
 }
 
 class _ChallengeBarState extends State<ChallengeBar> {
+
+  final _formKey = GlobalKey<FormState>();
   Completer<GoogleMapController> _controller = Completer();
   MapType _currentMapType = MapType.normal;
   static const LatLng _center = const LatLng(45.521563, -122.677433);
@@ -39,23 +42,16 @@ class _ChallengeBarState extends State<ChallengeBar> {
               children: <Widget>[
                 Row(
                   children: <Widget>[
-                    Padding(
-                      padding: const EdgeInsets.only(top:108.0,left: 70),
-                      child: Text('Take a maximum shower \n           of 3 minutes',style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 20,
-                        color: Colors.black
-                      ),),
-                    )
+
                   ],
                 ),
-                SizedBox(height: 30,),
+                SizedBox(height: 110,),
                 Row(
                   children: <Widget>[
                     Image.asset(Res.a20,width: 70,height: 70,),
               Container(
                 width: 220,
-                height: 230,
+                height: 300,
                 child: Stack(
                   children: <Widget>[
                     GoogleMap(
@@ -88,14 +84,222 @@ class _ChallengeBarState extends State<ChallengeBar> {
                 ),
 
               )
-        , Image.asset(Res.a19,width: 70,height: 70,),
+        , GestureDetector(
+                        onTap: (){
+                          Navigator.push(context, MaterialPageRoute(builder: (context)=>ChallengeScreen()));
+
+                        },
+                        child: Image.asset(Res.a19,width: 70,height: 70,)),
                   ],
                 ),
               Padding(
                 padding: const EdgeInsets.only(top:80.0),
                 child: GestureDetector(
                     onTap: (){
-                      Navigator.push(context, MaterialPageRoute(builder: (context)=>Startchallenge()));
+                    showDialog(context: context,
+                    builder: (BuildContext context) {
+                      return AlertDialog(
+                          content: Container(
+                            width: 300.0,
+                            height: 400.0,
+                            decoration: new BoxDecoration(
+                              shape: BoxShape.rectangle,
+                              color: const Color(0xFFFFFF),
+                              borderRadius:
+                              new BorderRadius.all(new Radius.circular(32.0)),
+                            ),
+                            child: Stack(
+                            overflow: Overflow.visible,
+                            children: <Widget>[
+                            Positioned(
+                            right: -40.0,
+                            top: -40.0,
+                            child: InkResponse(
+                            onTap: () {
+                        Navigator.of(context).pop();
+                      },
+                      child: CircleAvatar(
+                      child: Icon(Icons.close),
+                      backgroundColor: Colors.red,
+                      ),
+                      ),
+                      ),
+
+                              Form(
+                                key: _formKey,
+                                child: ListView(
+                                  children: <Widget>[
+                                  Container(
+                                  height: 55,
+                                  color: Colors.white,
+                                  width: double.infinity,
+                                  child: Padding(
+                                    padding: EdgeInsets.only(left:0.0,right: 0,top: 0),
+                                    child: Center(
+                                      child: Container(
+
+                                        decoration: BoxDecoration(
+                                          borderRadius: BorderRadius.circular(15),
+                                          color: Color(0xff12d003)
+                                        ),
+                                        child: TextField(
+                                          style: TextStyle(
+                                              fontSize: 15, color: Colors.white),
+                                          decoration: InputDecoration(
+                                            hintText: "Name of the challenge",
+                                            contentPadding: EdgeInsets.fromLTRB(20.0, 20.0, 20.0, 15.0),
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                    Container(
+                                      height: 150,
+                                      color: Colors.white,
+                                      width: double.infinity,
+                                      child: Padding(
+                                        padding: EdgeInsets.only(left:0.0,right: 0,top: 0),
+                                        child: Center(
+                                          child: Container(
+
+                                            decoration: BoxDecoration(
+                                              borderRadius: BorderRadius.circular(15),
+                                                color: Color(0xff12d003)
+                                            ),
+                                            child: TextField(
+                                              style: TextStyle(
+                                                  fontSize: 15, color: Colors.white),
+                                              decoration: InputDecoration(
+                                                hintText: "Description",
+                                                contentPadding: const EdgeInsets.symmetric(vertical: 60.0,horizontal: 15),
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                    Container(
+                                      height: 55,
+                                      color: Colors.white,
+                                      width: double.infinity,
+                                      child: Padding(
+                                        padding: EdgeInsets.only(left:0.0,right: 0,top: 0),
+                                        child: Center(
+                                          child: Container(
+
+                                            decoration: BoxDecoration(
+                                                borderRadius: BorderRadius.circular(15),
+                                                color: Color(0xff12d003)
+                                            ),
+                                            child: TextField(
+                                              style: TextStyle(
+                                                 fontSize: 15, color: Colors.white),
+                                              decoration: InputDecoration(
+                                                hintText: "End of date",
+                                                contentPadding: EdgeInsets.fromLTRB(20.0, 20.0, 20.0, 15.0),
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                    Column(
+                                      children: <Widget>[
+                                        Padding(
+                                          padding: const EdgeInsets.only(top:8.0,right: 100,),
+                                          child: Container(
+                                            child: Text('Total Points', style: TextStyle(
+                                              fontWeight: FontWeight.bold,
+                                              fontSize: 18,
+                                              color: Colors.black
+                                            ),),
+                                          ),
+                                        )
+                                        ,
+                                        Row(
+                                          children: <Widget>[
+                                            Padding(
+                                              padding: const EdgeInsets.all(15.0),
+                                              child: Container(
+
+                                                width: 50,
+                                                height: 50,
+                                                color: Color(0xff0bc1fc),
+                                                child: Center(
+                                                  child: Text('10', style: TextStyle(
+                                                      fontWeight: FontWeight.bold,
+                                                      fontSize: 18,
+                                                      color: Colors.black
+                                                  ),),
+                                                ),
+                                              ),
+                                            ),  Padding(
+                                              padding: const EdgeInsets.all(15.0),
+                                              child: Container(
+
+                                                width: 50,
+                                                height: 50,
+                                                color: Color(0xff0bc1fc),
+                                                child: Center(
+                                                  child: Text('10', style: TextStyle(
+                                                      fontWeight: FontWeight.bold,
+                                                      fontSize: 18,
+                                                      color: Colors.black
+                                                  ),),
+                                                ),
+                                              ),
+                                            ),
+                                            Padding(
+                                              padding: const EdgeInsets.all(8.0),
+                                              child: Container(
+                                                width: 50,
+                                                height: 50,
+                                                color: Color(0xff0bc1fc),
+                                                child: Center(
+                                                  child: Text('10', style: TextStyle(
+                                                      fontWeight: FontWeight.bold,
+                                                      fontSize: 18,
+                                                      color: Colors.black
+                                                  ),),
+                                                ),
+                                              ),
+                                            )
+                                          ],
+                                        )
+                                      ],
+                                    ),
+                                    Padding(
+                                      padding: const EdgeInsets.all(8.0),
+                                      child: RaisedButton(
+                                        color: Color(0xff0bc1fc),
+                                        shape: RoundedRectangleBorder(
+                                            borderRadius: new BorderRadius.circular(18.0),
+                                            side: BorderSide(                                      color: Color(0xff0bc1fc),
+                                            )
+                                        ),
+                                        child: Text("Save",style: TextStyle(
+                                          color: Colors.white,
+                                          fontSize: 18,
+                                          fontWeight: FontWeight.bold
+                                        ),),
+                                        onPressed: () {
+                                          if (_formKey.currentState.validate()) {
+                                            _formKey.currentState.save();
+                                          }
+                                        },
+                                      ),
+                                    )
+                                  ],
+                                ),
+                              ),
+                            ],
+                            ),
+                          ),
+                      );
+                    }
+                    );
+//                      Navigator.push(context, MaterialPageRoute(builder: (context)=>Startchallenge()));
                     },
                     child: Text('Make a challenge \n        together',style: TextStyle(fontSize: 19,color: Colors.white,fontWeight: FontWeight.bold),)),
               ),
@@ -103,7 +307,7 @@ class _ChallengeBarState extends State<ChallengeBar> {
                 Row(
                   children: <Widget>[
                     Padding(
-                      padding: const EdgeInsets.only(left:25.0,top: 50),
+                      padding: const EdgeInsets.only(left:25.0,top: 45),
                       child: GestureDetector(
                         onTap: (){
                           Navigator.push(context, MaterialPageRoute(builder: (context)=>ChallengeBar()));
@@ -117,7 +321,7 @@ class _ChallengeBarState extends State<ChallengeBar> {
                     ),
                     SizedBox(width: 20,),
                     Padding(
-                      padding: const EdgeInsets.only(left:45.0,top: 50),
+                      padding: const EdgeInsets.only(left:45.0,top: 45),
                       child: GestureDetector(
                         onTap: (){
                           Navigator.push(context, MaterialPageRoute(builder: (context)=>HomePage()));
@@ -131,7 +335,7 @@ class _ChallengeBarState extends State<ChallengeBar> {
                       ),
                     ),  SizedBox(width: 20,),
                     Padding(
-                      padding: const EdgeInsets.only(left:35.0,top: 50),
+                      padding: const EdgeInsets.only(left:35.0,top: 45),
                       child: GestureDetector(
                         onTap: (){
                           Navigator.push(context, MaterialPageRoute(builder: (context)=>Achievement()));

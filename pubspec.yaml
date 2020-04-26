@@ -106,6 +106,8 @@ flutter:
     - images/bgimg.png
     - images/challenges.png
     - images/challengesscreen.png
+    - images/cities.png
+    - images/cli.png
     - images/homebar.png
     - images/homebg.png
     - images/start.png
