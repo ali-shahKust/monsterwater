@@ -34,12 +34,16 @@ class _AchievementState extends State<Achievement> {
                                 padding: const EdgeInsets.all(18.0),
                                 child: Image.asset(Res.a33,width:250,height: 80,),
                               ),
+                              Padding(
+                                padding: const EdgeInsets.only(left:20.0,top: 17),
+                                child: Image.asset(Res.Earth,width: 75,height: 75,),
+                              ),
+
                               Center(child: Padding(
-                                padding: const EdgeInsets.only(left:0,top: 48,right: 100),
-                                child: Text("some text",style: TextStyle(
-                                    fontSize: 16,
+                                padding: const EdgeInsets.only(left:40,top: 48,right: 30),
+                                child: Text("Pick up litter.practice a \"Leave no trace\"...",style: TextStyle(
+                                    fontSize: 10,
                                     color: Colors.white,
-                                    fontWeight: FontWeight.bold
                                 ),),
                               )),
                             ]

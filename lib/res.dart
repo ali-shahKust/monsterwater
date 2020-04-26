@@ -65,6 +65,7 @@ class Res {
   static const String challengesscreen = "images/challengesscreen.png";
   static const String cities = "images/cities.png";
   static const String cli = "images/cli.png";
+  static const String Earth = "images/Earth.png";
   static const String homebar = "images/homebar.png";
   static const String homebg = "images/homebg.png";
   static const String start = "images/start.png";

@@ -25,6 +25,7 @@ dependencies:
   cupertino_icons: ^0.1.2
   google_nav_bar: ^2.0.1
   google_maps_flutter: ^0.4.0
+  countdown_flutter: ^0.1.1
 
 dev_dependencies:
   flutter_test:
@@ -108,6 +109,7 @@ flutter:
     - images/challengesscreen.png
     - images/cities.png
     - images/cli.png
+    - images/Earth.png
     - images/homebar.png
     - images/homebg.png
     - images/start.png
