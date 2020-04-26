@@ -1,12 +1,17 @@
 import 'dart:async';
+import 'dart:typed_data';
 
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_app/Home/Homepage.dart';
 import 'package:flutter_app/Home/achievement.dart';
 import 'package:flutter_app/Home/challengescreen.dart';
 import 'package:flutter_app/Home/startwaterchl.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import '../res.dart';
+import 'package:flutter/material.dart';
+import 'dart:async';
+import 'dart:ui' as ui;
 class ChallengeBar extends StatefulWidget {
   @override
   _ChallengeBarState createState() => _ChallengeBarState();
@@ -23,8 +28,15 @@ class _ChallengeBarState extends State<ChallengeBar> {
     _lastMapPosition = position.target;
   }
   final Set<Marker> _markers = {};
+  BitmapDescriptor pinLocationIcon;
   void _onMapCreated(GoogleMapController controller) {
     _controller.complete(controller);
+  }
+  Future<Uint8List> getBytesFromAsset(String path, int width) async {
+    ByteData data = await rootBundle.load(path);
+    ui.Codec codec = await ui.instantiateImageCodec(data.buffer.asUint8List(), targetWidth: width);
+    ui.FrameInfo fi = await codec.getNextFrame();
+    return (await fi.image.toByteData(format: ui.ImageByteFormat.png)).buffer.asUint8List();
   }
 
   @override
@@ -374,7 +386,7 @@ class _ChallengeBarState extends State<ChallengeBar> {
           title: 'Challenge',
           snippet: 'I am the best',
         ),
-        icon: BitmapDescriptor.defaultMarker,
+        icon: BitmapDescriptor.fromAsset(Res.monster),
       ),
       );
     });
